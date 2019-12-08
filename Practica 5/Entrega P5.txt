@@ -1,0 +1,89 @@
+
+public-keys:
+
+ubuntu@ip-172-30-0-142:~$ curl http://169.254.169.254/latest/meta-data/public-keys
+0=GonzaloVictor
+
+hostname:
+
+ubuntu@ip-172-30-0-142:~$ curl http://169.254.169.254/latest/meta-data/hostname
+ip-172-30-0-142.us-west-1.compute.internal
+
+instance-id:
+
+ubuntu@ip-172-30-0-142:~$ curl http://169.254.169.254/latest/meta-data/instance-id
+i-0fa35ee7b30e2cbbe
+
+
+
+Tarea 1
+
+
+user list:
+
+ubuntu@ip-172-30-0-142:~$ openstack user list
++----------------------------------+---------------+
+| ID                               | Name          |
++----------------------------------+---------------+
+| 024ffce11fc5456486cf2f8f33a7c2ec | nova          |
+| 079e4e0e933d4857adbcb1c67e50ea61 | placement     |
+| 2235211537ee4496b41a3cdefd3b5243 | glance        |
+| 3e48c3f57d1145d88df22f228942b932 | admin         |
+| 4b8ad1ab2326465da0d3108d32cc4048 | cinder        |
+| 549c472c7ba64009a044fdd7dd850a92 | alt_demo      |
+| 594913952f8546069a053252d849c749 | neutron       |
+| 7734620c055041b696f9f4d4cdb1988e | demo          |
+| f7c22e85f6d64e36ad3a983c67e11f48 | GonzaloVictor |
++----------------------------------+---------------+
+
+
+user show id:
+
+
+ubuntu@ip-172-30-0-142:~$ openstack user show f7c22e85f6d64e36ad3a983c67e11f48
++----------+----------------------------------+
+| Field    | Value                            |
++----------+----------------------------------+
+| enabled  | True                             |
+| id       | f7c22e85f6d64e36ad3a983c67e11f48 |
+| name     | GonzaloVictor                    |
+| options  | {}                               |
+| username | GonzaloVictor                    |
++----------+----------------------------------+
+
+
+
+
+
+curl:
+
+ubuntu@ip-172-30-0-142:~$ curl -i -vvv -X DELETE -H "X-Auth-Token: gAAAAABd3CpgVuxefjw46achBFoUDqJQIbbYYB5EhXdXkMVwzmNVNRBeXydCPlKRcQUeqKpZ2Md4ikasFCkdqE0A4C0VRSWtCgjEtVsCabXD9bA768tRn31p2_JJqw1gtas5itAxs-HHwimbNRaCF6KRuee3nBCRWg" http://172.30.0.142/identity/v3/users/f7c22e85f6d64e36ad3a983c67e11f48
+*   Trying 172.30.0.142...
+* Connected to 172.30.0.142 (172.30.0.142) port 80 (#0)
+> DELETE /identity/v3/users/f7c22e85f6d64e36ad3a983c67e11f48 HTTP/1.1
+> Host: 172.30.0.142
+> User-Agent: curl/7.47.0
+> Accept: */*
+> X-Auth-Token: gAAAAABd3CpgVuxefjw46achBFoUDqJQIbbYYB5EhXdXkMVwzmNVNRBeXydCPlKRcQUeqKpZ2Md4ikasFCkdqE0A4C0VRSWtCgjEtVsCabXD9bA768tRn31p2_JJqw1gtas5itAxs-HHwimbNRaCF6KRuee3nBCRWg
+> 
+< HTTP/1.1 204 No Content
+HTTP/1.1 204 No Content
+< Date: Mon, 25 Nov 2019 19:25:52 GMT
+Date: Mon, 25 Nov 2019 19:25:52 GMT
+< Server: Apache/2.4.18 (Ubuntu)
+Server: Apache/2.4.18 (Ubuntu)
+< Vary: X-Auth-Token
+Vary: X-Auth-Token
+< x-openstack-request-id: req-a2b353cb-a065-4616-9bcb-ac18cf457a35
+x-openstack-request-id: req-a2b353cb-a065-4616-9bcb-ac18cf457a35
+
+< 
+* Connection #0 to host 172.30.0.142 left intact
+
+
+Tarea 2:
+
+
+Tras realizar la configuracion de la maquina en openstack e intentar acceder a ella a traves de ssh nos es imposible conseguir dicho acceso ya que nos salta el timeout y no podemos continuar.
+
+Por este motivo no hemos sido capaces de incluir las capturas de la segunda tarea ni los resultados de la salida del comando ifconfig ni de configuracion de la VM.

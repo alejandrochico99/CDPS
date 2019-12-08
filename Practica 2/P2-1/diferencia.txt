@@ -1,0 +1,16 @@
+2,3c2,3
+<   <name>generic</name>
+<   <uuid>51b8109e-c0b9-40d4-9658-178cc4fbde8f</uuid>
+---
+>   <name>Ubuntu Jorge y Fer</name>
+>   <uuid>da720d25-2b9c-4f25-beb2-ba3dd1fd2991</uuid>
+36,37c36,37
+<       <driver name='qemu' type='raw'/>
+<       <source file='/mnt/tmp/JorgeTardioYFernandoMartinMaldonado/cdps-vm-base-p1.img'/>
+---
+>       <driver name='qemu' type='qcow2'/>
+>       <source file='/mnt/tmp/JorgeTardioYFernandoMartinMaldonado/cdps-JorgeFernando.qcow2'/>
+74c74
+<       <mac address='52:54:00:c5:dd:45'/>
+---
+>       <mac address='52:54:00:c5:dd:55'/>

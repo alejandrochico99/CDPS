@@ -1,0 +1,33 @@
+﻿                                                Practica 1
+
+
+
+Disco:  -Bus: VirtIO   
+- Formato de almacenamiento: Raw
+
+<disk type='file' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <source file='/mnt/tmp/gonzalo_moreno_arevalo/cdps-vm-base-p2.img'/>
+      <backingStore/>
+      <target dev='vda' bus='virtio'/>
+      <alias name='virtio-disk0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    </disk>
+
+
+Interfaz de Red: 
+- Direccion Mac:  52:54:00:cc:63:e1
+-Modelo de dispositivo: virtio
+
+<interface type='network'>
+      <mac address='52:54:00:cc:63:e1'/>
+      <source network='default' bridge='virbr0'/>
+      <target dev='vnet0'/>
+      <model type='virtio'/>
+      <alias name='net0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+
+Memoria:  2097152 KiB      “<memory unit='KiB'>2097152</memory>”
+
+
